@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- หัวบนแท็บเว็บ -->
+    <title>คนสวยของพี่โยรุ น้องลี่อิน 💖</title> 
+    <style>
+        body {
+            background-color: #fef5d1; /* สีพื้นหลังครีมเหลืองตามรูปเดิม */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            cursor: pointer;
+        }
+        /* ตั้งค่ารูปซองจดหมายที่วาดด้วย SVG */
+        .envelope-icon {
+            width: 300px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .container:hover .envelope-icon {
+            transform: scale(1.05); /* ขยายขนาดเล็กน้อยเวลาเอาเมาส์ไปชี้ */
+        }
+        #statusText {
+            font-size: 18px;
+            color: #333;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        /* กล่องข้อความจดหมายซ่อนไว้ตอนแรก */
+        #letterContent {
+            display: none;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            max-width: 480px;
+            margin-top: 20px;
+            animation: fadeIn 1s ease forwards;
+            border: 2px dashed #ff9999;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        h2 { color: #ff5e7e; margin-top: 0; text-align: center; }
+        p.confession {
+            line-height: 1.8;
+            color: #444;
+            text-align: left;
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-indent: 20px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" onclick="openLetter()">
+        <!-- ใช้ SVG วาดรูปซองจดหมายปิด เพื่อให้แสดงผลได้ 100% โดยไม่ต้องโหลดภาพจากเน็ต -->
+        <svg id="envelopeSvg" class="envelope-icon" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+            <!-- ตัวซองจดหมายสีส้มเข้ม -->
+            <path d="M2 6C2 4.89543 2.89543 4 4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6Z" fill="#d35400"/>
+            <!-- ฝาซองจดหมายสีส้มสว่างตามรูปของคุณ -->
+            <path d="M2 6L12 13L22 6V6C22 4.89543 21.1046 4 20 4H4C2.89543 4 2 4.89543 2 6V6Z" fill="#f39c12"/>
+            <!-- เส้นขอบเงาสามเหลี่ยมด้านล่าง -->
+            <path d="M2 18L10 12L2 6V18Z" fill="#e67e22" opacity="0.5"/>
+            <path d="M22 18L14 12L22 6V18Z" fill="#e67e22" opacity="0.5"/>
+        </svg>
+        <p id="statusText">กดเปิดซองจดหมายโดยไว</p>
+    </div>
+
+    <!-- กล่องข้อความจดหมายของคุณ -->
+    <div id="letterContent">
+        <h2>ถึง น้องลี่อินคนสวย... 🌹</h2>
+        
+        <p class="confession">
+            คงเป็นตั้งแต่ครั้งแรกที่พี่ได้คุยกับเธอแล้วล่ะ เด็กอะไรก็ไม่รู้น่ารักน่าเอ็นดูจนสะเทือนใจพี่ไปหมด ขอบคุณความสะเหล่อที่พาให้เธอเข้ามาในชีวิตของพี่
+        </p>
+        
+        <p class="confession">
+            ขอบคุณที่คอยเป็นความสดใสเป็นรอยยิ้มและเป็นความสุขในทุก ๆ วันต่อจากนี้ให้กับพี่นะคนสวยของพี่โยรุ
+        </p>
+        
+        <p class="confession">
+            น้องลี่อินของพี่รู้ไหมว่าทุกครั้งที่พี่ได้เห็นข้อความจากเธอใจมันฟูจนบอกไม่ถูกเลย จากวันแรกที่ประทับใจ ตอนนี้ความรู้สึกมันยิ่งเพิ่มขึ้นทวีคูณจนมองไปทางไหนก็มีแต่เรื่องของเธอเต็มไปหมด
+        </p>
+        
+        <p class="confession">
+            เธอเป็นเหมือนของขวัญที่ดีที่สุดที่พี่เคยได้รับมาเลยนะ พี่สัญญาว่าจะคอยดูแลคอยอยู่ข้างๆและรักเด็กดีคนนี้ให้มากที่สุดในทุกๆวันเลยครับ ❤️
+        </p>
+        
+        <p style="text-align: right; font-weight: bold; color: #ff5e7e; font-size: 18px; margin-top: 25px;">จาก พี่โยรุ 💖</p>
+    </div>
+
+    <!-- โค้ดดึงเพลง "คู่ชีวิต - Cocktail" เริ่มที่นาที 0:45 ท่อนฮุกพอดี -->
+    <iframe id="loveSong" width="0" height="0" src="https://youtube.com" frameborder="0" allow="autoplay"></iframe>
+
+    <script>
+        function openLetter() {
+            //เปลี่ยนเป็นซองจดหมายเปิดออกด้วยการแก้โค้ด SVG ด้านใน
+            document.getElementById("envelopeSvg").innerHTML = `
+                <!-- ตัวซองจดหมายด้านหลัง -->
+                <path d="M2 8C2 6.89543 2.89543 6 4 6H20C21.1046 6 22 6.89543 22 8V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V8Z" fill="#d35400"/>
+                <!-- กระดาษจดหมายโผล่ออกมา -->
+                <path d="M4 4H20V12H4V4Z" fill="#ffffff"/>
+                <!-- ฝาซองจดหมายเปิดขึ้นด้านบน -->
+                <path d="M2 8L12 2L22 8" fill="#f39c12"/>
+                <!-- ตัวซองด้านหน้า -->
+                <path d="M2 18L10 12L2 8V18Z" fill="#e67e22" opacity="0.7"/>
+                <path d="M22 18L14 12L22 8V18Z" fill="#e67e22" opacity="0.7"/>
+                <path d="M2 18L12 11L22 18V18Z" fill="#d35400" opacity="0.9"/>
+            `;
+            
+            // ซ่อนคำสั่งเปิดจดหมายเดิม
+            document.getElementById("statusText").style.display = "none";
+            
+            // แสดงกล่องข้อความจดหมายหวานๆ
+            document.getElementById("letterContent").style.display = "block";
+            
+            // สั่งให้เพลงเริ่มเล่นทันทีเมื่อกดเปิดซอง
+            var iframe = document.getElementById("loveSong");
+            iframe.src += "&autoplay=1";
+        }
+    </script>
+
+</body>
+</html>
